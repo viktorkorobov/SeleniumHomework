@@ -8,20 +8,24 @@ public class SearchPage extends BaseMethod {
     private final  By result = By.xpath("//h1[@id='firstHeading']");
     private final  By element1 = By.xpath("//div[@class='mw-search-results-container']//span");
 
-    public void clickOnSearch(){
+    public SearchPage clickOnSearch(){
         click(search);
+        return this;
     }
-    public void fillText(String text){
+    public SearchPage fillText(String text){
         send(search, text);
+        return this;
     }
 
-    public void enterSearch() {
+    public SearchPage enterSearch() {
         cliclEnter(search);
+        return this;
     }
     public String getTitle(){
         return getTextFromElement(result);
     }
-    public void clickOnElement(){
+    public SearchPage clickOnElement(){
         click(element1);
+        return this;
     }
 }
